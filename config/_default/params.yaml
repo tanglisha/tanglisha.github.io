@@ -1,0 +1,79 @@
+
+debug: true             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
+since: "2024"            # Site creation time          # 站点建立时间
+homeFullContent: false   # if false, show post summaries on home page. Otherwise show full content.
+rssFullContent: true     # if false, Rss feed instead of the summary
+
+author:
+  name: "Liz Dahlstrom"
+  # url: "/about"        # optional                      # 可选
+
+# site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
+logoTitle: "LD"        # default: the title value    # 默认值: 上面设置的title值
+keywords:
+  - development
+
+# description: "Hugo theme jane example site."
+
+# paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
+archive-paginate: 10
+
+# paginate style, default use numbered pagination links
+# if true, use original "Previous" and "Next" links.
+# paginateOriginalStyle: true
+
+# The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
+dateFormatToUse: "2006-01-02"
+
+# show word count and read time ?                       # 是否显示字数统计与阅读时间
+moreMeta: true
+
+# show language chooser in menu
+showMenuLanguageChooser: false
+
+# 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
+# Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
+toc: true                                                                            # 是否开启目录
+photoswipe: true         # see https://github.com/dimsemenov/PhotoSwipe            # 是否启用PhotoSwipe（图片可点击）
+# support latex for math
+mathjax: false           # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
+
+contentCopyright: '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
+
+# Link custom CSS and JS assets
+#   (relative to /static/css and /static/js respectively)
+customCSS:            # if ['custom.css'], load '/static/css/custom.css' file
+  -
+customJS:             # if ['custom.js'], load '/static/js/custom.js' file
+  -
+
+# enable 'fork me on github', https://blog.github.com/2008-12-19-github-ribbons/
+publicCDN:
+  enable: false
+  jquery: '<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
+  slideout: '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
+
+gitInfo:
+  gitRepo: "https://github.com/tanglisha/tanglisha.gitthub.io"
+  showCommitMessage: false
+
+social:
+  # a-email: "mailto:your@email.com"
+  # b-stack-overflow: "http://en.xianmin.org/hugo-theme-jane/"
+  # c-twitter: "http://en.xianmin.org/hugo-theme-jane/"
+  # d-facebook: "http://en.xianmin.org/hugo-theme-jane/"
+  e-linkedin: "https://linkedin.com/in/tanglisha"
+  # f-google = "http://en.xianmin.org/hugo-theme-jane/"
+  g-github: "https://github.com/tanglisha"
+  # h-weibo = "http://en.xianmin.org/hugo-theme-jane/"
+  # i-zhihu = "http://en.xianmin.org/hugo-theme-jane/"
+  # j-douban = "http://en.xianmin.org/hugo-theme-jane/"
+  # k-pocket = "http://en.xianmin.org/hugo-theme-jane/"
+  # l-tumblr = "http://en.xianmin.org/hugo-theme-jane/"
+  # m-instagram = "http://en.xianmin.org/hugo-theme-jane/"
+  # n-gitlab = "http://en.xianmin.org/hugo-theme-jane/"
+  # o-goodreads = "http://en.xianmin.org/hugo-theme-jane/"
+  # p-coding = "http://en.xianmin.org/hugo-theme-jane/"
+  # q-bilibili = "http://en.xianmin.org/hugo-theme-jane/"
+  # r-codeforces = "http://en.xianmin.org/hugo-theme-jane/"
+  # s-mastodon = "http://en.xianmin.org/hugo-theme-jane/"

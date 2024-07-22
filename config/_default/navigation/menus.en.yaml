@@ -1,0 +1,37 @@
+---
+main:
+- name: "Home"
+  weight: 10
+  identifier: "home"
+  pageref: "/"
+- name: "Docs"
+  weight: 11
+  identifier: "docs"
+  pageref: "/categories/docs/"
+- name: "Demo"
+  weight: 12
+  identifier: "demo"
+  pageref: "/categories/demo/"
+- name: Archives
+  weight: 20
+  identifier: archives
+  pageref: "/post/"
+- name: Tags
+  weight: 30
+  identifier: tags
+  pageref: "/tags/"
+- name: Categories
+  weight: 40
+  identifier: categories
+  pageref: "/categories/"
+
+
+# - name: external-link
+#   weight: 50
+#   url: "https://gohugo.io"
+
+
+# - name: Sub docs menu
+#   weight: 12
+#   parent: docs
+#   url: "/docs/sub"
