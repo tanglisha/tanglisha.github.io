@@ -1,5 +1,5 @@
 ---
-title: 'Blog Setup'
+title: GitHub Blog Setup
 date: 2024-07-22T15:10:28-07:00
 draft: false
 summary: Step by step instructions for setting up a Hugo blog in GitHub Pages
