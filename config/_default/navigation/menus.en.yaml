@@ -4,14 +4,14 @@ main:
   weight: 10
   identifier: "home"
   pageref: "/"
-- name: "Docs"
-  weight: 11
-  identifier: "docs"
-  pageref: "/categories/docs/"
-- name: "Demo"
-  weight: 12
-  identifier: "demo"
-  pageref: "/categories/demo/"
+# - name: "Docs"
+#   weight: 11
+#   identifier: "docs"
+#   pageref: "/categories/docs/"
+# - name: "Demo"
+#   weight: 12
+#   identifier: "demo"
+#   pageref: "/categories/demo/"
 - name: Archives
   weight: 20
   identifier: archives

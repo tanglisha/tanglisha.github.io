@@ -1,12 +1,15 @@
-+++
-title = 'Blog Setup'
-date = 2024-07-22T15:10:28-07:00
-draft = false
-+++
+---
+title: 'Blog Setup'
+date: 2024-07-22T15:10:28-07:00
+draft: false
+summary: Step by step instructions for setting up a Hugo blog in GitHub Pages
+tags:
+- hugo
+---
 
-I've used [hugo](https://gohugo.io) to generate this blog. It wasn't my first choice mostly because I knew I wanted to use Github Pages and they default to Jeckyll.
+I've used [hugo](https://gohugo.io) to generate this blog. It wasn't my first choice because I knew I wanted to use Github Pages and the default instructions Jeckyll.
 
-Here is how I created it.
+Here's how I created it.
 
 # tl;dr
 1. [Install Hugo:](#install-hugo) `snap install hugo`
@@ -201,3 +204,4 @@ The path to your new page will include the file name with no extension, like `ht
 
 # Notes
 - You don't need to commit your public directory, the GitHub Actions setup will do that for you
+- The front matter comes from `archetipes/default.md`

@@ -8,3 +8,28 @@ module:
   imports:
     - path: "github.com/xianmin/hugo-theme-jane"
       disable: false
+
+
+enableRobotsTXT: true
+enableEmoji: true
+
+mainSections:
+  - post
+
+paginate: 5                                              # 首页每页显示的文章数
+rssLimit: 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+enableGitInfo: true # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
+# uglyURLs = true
+
+# language support en / zh-cn / other... translations present in i18n/
+defaultContentLanguage: en  # Default language to use (if you setup multilingual support)
+languages:
+  en:
+    title: Liz Dahlstrom
+    languageName: "English"
+    weight: 1
+
+
+taxonomies:
+  tag: tags
+  # category: categories
