@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          Blog Setup - Liz Dahlstrom
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Liz Dahlstrom" />
+  <meta name="description" content="I&amp;rsquo;ve used hugo to generate this blog. It wasn&amp;rsquo;t my first choice mostly because I knew I wanted to use Github Pages and they default to Jeckyll.
+Here is how I created it.
+tl;dr Install Hugo: snap install hugo Create a Hugo site: Go to the parent directory: cd ~/workspace Create the site: hugo new site &amp;lt;repo-name&amp;gt; --format yaml Switch directories: cd &amp;lt;repo-name&amp;gt; Update url to localhost: sed -ie &amp;quot;s*baseURL: https://example." />
+
+  <meta name="keywords" content="development" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.129.0" />
+
+
+<link rel="canonical" href="http://localhost:1313/posts/blog-setup/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/eruda@1.2.6/eruda.min.js" integrity="sha256-Jmz4bc3kp+rRrXX2tGadNBKFLwtzMapr8kHABxSAAP8=" crossorigin="anonymous"></script>
+<script>eruda.init();</script>
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/">
+
+
+<meta property="og:url" content="http://localhost:1313/posts/blog-setup/">
+  <meta property="og:site_name" content="Liz Dahlstrom">
+  <meta property="og:title" content="Blog Setup">
+  <meta property="og:description" content="I’ve used hugo to generate this blog. It wasn’t my first choice mostly because I knew I wanted to use Github Pages and they default to Jeckyll.
+Here is how I created it.
+tl;dr Install Hugo: snap install hugo Create a Hugo site: Go to the parent directory: cd ~/workspace Create the site: hugo new site &lt;repo-name&gt; --format yaml Switch directories: cd &lt;repo-name&gt; Update url to localhost: sed -ie &#34;s*baseURL: https://example.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-07-22T15:10:28-07:00">
+    <meta property="article:modified_time" content="2024-07-22T15:10:28-07:00">
+
+  <meta itemprop="name" content="Blog Setup">
+  <meta itemprop="description" content="I’ve used hugo to generate this blog. It wasn’t my first choice mostly because I knew I wanted to use Github Pages and they default to Jeckyll.
+Here is how I created it.
+tl;dr Install Hugo: snap install hugo Create a Hugo site: Go to the parent directory: cd ~/workspace Create the site: hugo new site &lt;repo-name&gt; --format yaml Switch directories: cd &lt;repo-name&gt; Update url to localhost: sed -ie &#34;s*baseURL: https://example.">
+  <meta itemprop="datePublished" content="2024-07-22T15:10:28-07:00">
+  <meta itemprop="dateModified" content="2024-07-22T15:10:28-07:00">
+  <meta itemprop="wordCount" content="1025">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blog Setup">
+  <meta name="twitter:description" content="I’ve used hugo to generate this blog. It wasn’t my first choice mostly because I knew I wanted to use Github Pages and they default to Jeckyll.
+Here is how I created it.
+tl;dr Install Hugo: snap install hugo Create a Hugo site: Go to the parent directory: cd ~/workspace Create the site: hugo new site &lt;repo-name&gt; --format yaml Switch directories: cd &lt;repo-name&gt; Update url to localhost: sed -ie &#34;s*baseURL: https://example.">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">LD</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Docs</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Demo</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/posts/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      LD
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Docs</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">Demo</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/posts/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">Blog Setup</h1>
+          
+
+          <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      Liz Dahlstrom
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2024-07-22">
+      2024-07-22
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        1025 words -
+        5 min read
+      </span>
+
+    
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <p>I&rsquo;ve used <a href="https://gohugo.io">hugo</a> to generate this blog. It wasn&rsquo;t my first choice mostly because I knew I wanted to use Github Pages and they default to Jeckyll.</p>
+<p>Here is how I created it.</p>
+<h1 id="tldr">tl;dr</h1>
+<ol>
+<li><a href="/posts/blog-setup/#install-hugo">Install Hugo:</a> <code>snap install hugo</code></li>
+<li><a href="/posts/blog-setup/#create-new-site">Create a Hugo site:</a>
+<ol>
+<li>Go to the parent directory: <code>cd ~/workspace</code></li>
+<li>Create the site: <code>hugo new site &lt;repo-name&gt; --format yaml</code></li>
+<li>Switch directories: <code>cd &lt;repo-name&gt;</code></li>
+<li>Update url to localhost: <code>sed -ie &quot;s*baseURL: https://example.org/*baseURL: 'http://localhost:1313/'*&quot; hugo.yaml</code></li>
+<li>Set up config directory: <code>mkdir -p config/_default &amp;&amp; mv hugo.yaml config/_default</code></li>
+</ol>
+</li>
+<li><a href="/posts/blog-setup/#module-init">Initialize a new module:</a> <code>hugo mod init &lt;unique identifier&gt;</code></li>
+<li><a href="/posts/blog-setup/#theme">Theme</a>
+<ol>
+<li>Configure the theme:</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt; EOF &gt;&gt; config/_default/hugo.yaml
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">theme: 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - github.com/xianmin/hugo-theme-jane
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">module:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  imports:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - path: &#34;github.com/xianmin/hugo-theme-jane&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      disable: false
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><pre><code>2. Install the theme: `hugo mod get`
+</code></pre>
+<ol start="6">
+<li><a href="/posts/blog-setup/#vendor-modules">Vendor dependencies:</a> <code>hugo mod vendor</code></li>
+<li>Add to GitHub pages <a href="https://gohugo.io/categories/hosting-and-deployment/">or follow the appropriate instructions here</a>
+<ol>
+<li>Initialize the git repo in the hugo site you created: <code>git init</code></li>
+<li>Go to your GitHub account and create a new repo <code>&lt;your-account-name&gt;.github.io</code> for GitHub Pages by clicking the plus (+)</li>
+<li>Follow the instructions to add this new location to the repo you&rsquo;ve been working in. Something like <code>git remote add origin https://github.com/&lt;your-account-name&gt;/&lt;your-account-name&gt;.github.io.git</code></li>
+<li>Go to <code>https://github.com/&lt;your-account-name&gt;/&lt;your-account-name&gt;.github.io/settings/pages</code></li>
+<li>Change the <code>Source</code> dropdown to <code>GitHub Actions</code></li>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Follow steps 5-6 to set up GitHub Actions.</a> This will build and deploy your site to GitHub pages every time you push a change.</li>
+<li>Within your repo, follow the instructions GitHub gave you to assign the new repo as your</li>
+</ol>
+</li>
+</ol>
+<h1 id="install-hugo">Install Hugo</h1>
+<p>I&rsquo;m using Ubuntu, so I was able to <code>snap install hugo</code>. There are a lot of different ways available to install both Go and Hugo, this was a single straightforward step. I may create an image to use in the future, but this is fine for now.</p>
+<h1 id="create-new-site">Create a new site</h1>
+<p>I keep all my projects in <code>~/workspace</code>, so I started there.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/workspace
+</span></span></code></pre></div><p>The simplest setup command to use is <code>hugo new site &lt;site-name&gt;</code>. This will create a new hugo site in the current directory with a single toml configuration file. I prefer to use a config directory and yaml instead of toml, so I did a little more work than this.</p>
+<p>Change the <code>BLOG_URL</code> variable to what is suggested if you&rsquo;re using github pages.</p>
+<p>Other options:</p>
+<ul>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">GitHub Pages</a></li>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/">GitLab Pages</a></li>
+<li><a href="https://gohugo.io/categories/hosting-and-deployment/">Some other hosting</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>BLOG_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;my-github-account-name&gt;.github.io&#34;</span>
+</span></span><span style="display:flex;"><span>hugo new site <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BLOG_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --configDir config --format yaml
+</span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BLOG_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>mkdir -p config/_default
+</span></span><span style="display:flex;"><span>mv hugo.yaml config/_default
+</span></span></code></pre></div><p>Open the file <code>config/_default/hugo.yaml</code> with your preferred editor. Change the <code>baseURL</code> value from <code>https://example.org/</code> to <code>http://localhost:1313/</code> - <em>including</em> that last slash.</p>
+<h2 id="module-init">Set the site up as a module</h2>
+<p><a href="https://gohugo.io/hugo-modules/use-modules/#initialize-a-new-module">Docs</a></p>
+<p>Rather than fiddling with nested git repos or submodules, I used Go&rsquo;s module functionality. Hugo provides this functionality.</p>
+<p>The mod init command was a little confusing for me. The idea is to create a unique Go module name. The suggested module name <code>example.com/my-blog</code> is meant to be your actual site url as a <em>namespace</em> with a subfolder as a <em>unique identifier</em>. For example, I used <code>tanglisha.gihub.io/blog</code> in my mod init. The subfolder can be whatever you want. If you aren&rsquo;t using Go aside from this, you are unlikely to run into a name conflict. The value you use will go into your <a href="https://github.com/tanglisha/tanglisha.github.io/blob/main/go.mod">top level <code>go.mod</code> file.</a>.</p>
+<p>I suggest <em>not</em> leaving this as <code>example.com/my-blog</code>, if you create a new Hugo site later and do the same thing you could get a module name conflict in Go that may be confusing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo mod init <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BLOG_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">/blog&#34;</span>
+</span></span></code></pre></div><h1 id="theme">Theme</h1>
+<p><a href="https://themes.gohugo.io/">I looked through the themes listed on the Hugo website to find a simple one.</a> I ended up choosing <a href="https://themes.gohugo.io/themes/hugo-theme-jane/">Jane</a>.</p>
+<p>Because we&rsquo;re using Go modules, the theme can be added in the config file at <code>config/_default/hugo.yaml</code>. <code>module</code> and <code>theme</code> are top level keys, don&rsquo;t indent them.</p>
+<p><a href="https://gohugo.io/hugo-modules/use-modules/#use-a-module-for-a-theme">Docs</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">theme</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">github.com/xianmin/hugo-theme-jane</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">module</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">imports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;github.com/xianmin/hugo-theme-jane&#34;</span>
+</span></span></code></pre></div><p>Now we can download the theme back on the command line.</p>
+<p><a href="https://gohugo.io/hugo-modules/use-modules/#update-modules">Docs</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo mod get
+</span></span></code></pre></div><h1 id="vendor-modules">Vendor modules</h1>
+<p><a href="https://gohugo.io/hugo-modules/use-modules/#vendor-your-modules">Docs</a></p>
+<p>I highly recommend vendoring your modules. This will download your dependencies into a <code>_vendor</code> directory, which avoids issues later on.</p>
+<ul>
+<li>You won&rsquo;t need internet access in the future to build your site</li>
+<li>If a dependency disappears for any reason, you can still build your site. <a href="https://en.wikipedia.org/wiki/Npm_left-pad_incident">A disappearing dependency is what caused the left-pad incident in 2016</a></li>
+<li>Completely sidesteps a <a href="https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-03-Dependency-Chain-Abuse">dependency confusion attack</a></li>
+</ul>
+<p>Be sure to include the <code>_vendor</code> directory in your repo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo mod vendor
+</span></span></code></pre></div><h1 id="add-to-github-pages">Add to GitHub Pages</h1>
+<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Docs</a></p>
+<p>Go to your GitHub account and create a new repo <code>&lt;your-account-name&gt;.github.io</code> for GitHub Pages by clicking the plus (+). It must be named using this pattern to work.</p>
+<p>Look at the menu along the top of the screen. Click <code>Settings</code>. On the new page, click <code>Pages</code> in the menu along the left of the screen.</p>
+<p>Change the <code>Source</code> dropdown to <code>GitHub Actions</code>.</p>
+<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Follow steps 5-6 to set up GitHub Actions.</a> This will build and deploy your site to GitHub pages every time you push a change. I&rsquo;m not pasting the yaml here because</p>
+<ol>
+<li>I didn&rsquo;t write it / it&rsquo;s not mine</li>
+<li>If there are changes, that page will be kept up to date</li>
+</ol>
+<p>Go back to the main page of your repo. You can do this by clicking on the repo name at the top of the screen.</p>
+<p>This page will give you instructions on adding this as a remote. It&rsquo;ll look something like <code>git remote add origin https://github.com/&lt;your-account-name&gt;/&lt;your-account-name&gt;.github.io.git</code>. Copy it from the website, then go back to he terminal/console you were working in before. Make sure you&rsquo;re still located in the hugo site you&rsquo;ve created.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><p>Now paste the command you copied from Github.</p>
+<p>Add the new directories and files to git.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add _vendor .github archetypes assets config content datta i18n layouts public resources static themes .hugo_build.lock go.mod go.sum<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#39;set up website&#39;</span>
+</span></span></code></pre></div><p>Before this will work in GitHub Pages, we need to add a new configuration file specific to production, where it will be published.</p>
+<p>Make sure the baseURL used in this snipped begins with <code>https://</code> and ends with a slash.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p config/production
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;baseURL: \&#34;</span><span style="color:#e6db74">${</span>BLOG_URL<span style="color:#e6db74">}</span><span style="color:#e6db74">/\&#34;&#34;</span> &gt; config/production/hugo.yaml
+</span></span><span style="display:flex;"><span>git add config/production/hugo.yaml
+</span></span><span style="display:flex;"><span>git push
+</span></span></code></pre></div><p>Give GitHub a few minutes to build your site, then visit your blog url. You should see a site that&rsquo;s styled, but doesn&rsquo;t yet have any content.</p>
+
+        </div>
+
+        
+        
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Liz Dahlstrom</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+      2024-07-22
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+  </p>
+</div>
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          
+
+
+          
+          <nav class="post-nav">
+            
+            
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+
+    </div>
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">Table of Contents</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#module-init">Set the site up as a module</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+  </div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+  
+  
+    <a href="https://linkedin.com/in/tanglisha" rel="me noopener" class="iconfont"
+      title="linkedin"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M872.405333 872.618667h-151.637333v-237.610667c0-56.661333-1.152-129.578667-79.018667-129.578667-79.061333 0-91.136 61.653333-91.136 125.397334v241.792H398.976V384h145.664v66.602667h1.962667c20.352-38.4 69.845333-78.933333 143.786666-78.933334 153.642667 0 182.058667 101.12 182.058667 232.746667v268.202667zM227.712 317.141333a87.978667 87.978667 0 0 1-88.021333-88.106666 88.064 88.064 0 1 1 88.021333 88.106666z m76.032 555.477334H151.68V384h152.064v488.618667zM948.266667 0H75.562667C33.792 0 0 33.024 0 73.770667v876.458666C0 991.018667 33.792 1024 75.562667 1024h872.576C989.866667 1024 1024 991.018667 1024 950.229333V73.770667C1024 33.024 989.866667 0 948.138667 0h0.128z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/tanglisha" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2024
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Liz Dahlstrom
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.1bb0b72097cde6f65a5cc131326f811aec1a55c1260789cbd1be234c7fb6297c.js" integrity="sha256-G7C3IJfN5vZaXMExMm&#43;BGuwaVcEmB4nL0b4jTH&#43;2KXw=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/"></script>
+
+
+  </body>
+</html>

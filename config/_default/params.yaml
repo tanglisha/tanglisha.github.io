@@ -38,7 +38,7 @@ photoswipe: true         # see https://github.com/dimsemenov/PhotoSwipe         
 # support latex for math
 mathjax: false           # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
 
-contentCopyright: '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
+contentCopyright: '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
 # Link custom CSS and JS assets
 #   (relative to /static/css and /static/js respectively)

@@ -15,7 +15,7 @@ main:
 - name: Archives
   weight: 20
   identifier: archives
-  pageref: "/post/"
+  pageref: "/posts/"
 - name: Tags
   weight: 30
   identifier: tags

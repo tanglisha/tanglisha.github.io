@@ -6,9 +6,140 @@
     <description>Recent content on Liz Dahlstrom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Mon, 22 Jul 2024 15:10:28 -0700</lastBuildDate>
     
         <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog Setup</title>
+      <link>http://localhost:1313/posts/blog-setup/</link>
+      <pubDate>Mon, 22 Jul 2024 15:10:28 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/blog-setup/</guid>
+      
+        <description>&lt;p&gt;I&amp;rsquo;ve used &lt;a href=&#34;https://gohugo.io&#34;&gt;hugo&lt;/a&gt; to generate this blog. It wasn&amp;rsquo;t my first choice mostly because I knew I wanted to use Github Pages and they default to Jeckyll.&lt;/p&gt;
+&lt;p&gt;Here is how I created it.&lt;/p&gt;
+&lt;h1 id=&#34;tldr&#34;&gt;tl;dr&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/blog-setup/#install-hugo&#34;&gt;Install Hugo:&lt;/a&gt; &lt;code&gt;snap install hugo&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/blog-setup/#create-new-site&#34;&gt;Create a Hugo site:&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to the parent directory: &lt;code&gt;cd ~/workspace&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create the site: &lt;code&gt;hugo new site &amp;lt;repo-name&amp;gt; --format yaml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Switch directories: &lt;code&gt;cd &amp;lt;repo-name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Update url to localhost: &lt;code&gt;sed -ie &amp;quot;s*baseURL: https://example.org/*baseURL: &#39;http://localhost:1313/&#39;*&amp;quot; hugo.yaml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set up config directory: &lt;code&gt;mkdir -p config/_default &amp;amp;&amp;amp; mv hugo.yaml config/_default&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/blog-setup/#module-init&#34;&gt;Initialize a new module:&lt;/a&gt; &lt;code&gt;hugo mod init &amp;lt;unique identifier&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/blog-setup/#theme&#34;&gt;Theme&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;Configure the theme:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;lt;&amp;lt; EOF &amp;gt;&amp;gt; config/_default/hugo.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;theme: 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  - github.com/xianmin/hugo-theme-jane
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;module:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  imports:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    - path: &amp;#34;github.com/xianmin/hugo-theme-jane&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;      disable: false
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;2. Install the theme: `hugo mod get`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/blog-setup/#vendor-modules&#34;&gt;Vendor dependencies:&lt;/a&gt; &lt;code&gt;hugo mod vendor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add to GitHub pages &lt;a href=&#34;https://gohugo.io/categories/hosting-and-deployment/&#34;&gt;or follow the appropriate instructions here&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;Initialize the git repo in the hugo site you created: &lt;code&gt;git init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Go to your GitHub account and create a new repo &lt;code&gt;&amp;lt;your-account-name&amp;gt;.github.io&lt;/code&gt; for GitHub Pages by clicking the plus (+)&lt;/li&gt;
+&lt;li&gt;Follow the instructions to add this new location to the repo you&amp;rsquo;ve been working in. Something like &lt;code&gt;git remote add origin https://github.com/&amp;lt;your-account-name&amp;gt;/&amp;lt;your-account-name&amp;gt;.github.io.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Go to &lt;code&gt;https://github.com/&amp;lt;your-account-name&amp;gt;/&amp;lt;your-account-name&amp;gt;.github.io/settings/pages&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change the &lt;code&gt;Source&lt;/code&gt; dropdown to &lt;code&gt;GitHub Actions&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;Follow steps 5-6 to set up GitHub Actions.&lt;/a&gt; This will build and deploy your site to GitHub pages every time you push a change.&lt;/li&gt;
+&lt;li&gt;Within your repo, follow the instructions GitHub gave you to assign the new repo as your&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h1&gt;
+&lt;p&gt;I&amp;rsquo;m using Ubuntu, so I was able to &lt;code&gt;snap install hugo&lt;/code&gt;. There are a lot of different ways available to install both Go and Hugo, this was a single straightforward step. I may create an image to use in the future, but this is fine for now.&lt;/p&gt;
+&lt;h1 id=&#34;create-new-site&#34;&gt;Create a new site&lt;/h1&gt;
+&lt;p&gt;I keep all my projects in &lt;code&gt;~/workspace&lt;/code&gt;, so I started there.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd ~/workspace
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The simplest setup command to use is &lt;code&gt;hugo new site &amp;lt;site-name&amp;gt;&lt;/code&gt;. This will create a new hugo site in the current directory with a single toml configuration file. I prefer to use a config directory and yaml instead of toml, so I did a little more work than this.&lt;/p&gt;
+&lt;p&gt;Change the &lt;code&gt;BLOG_URL&lt;/code&gt; variable to what is suggested if you&amp;rsquo;re using github pages.&lt;/p&gt;
+&lt;p&gt;Other options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-gitlab/&#34;&gt;GitLab Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/categories/hosting-and-deployment/&#34;&gt;Some other hosting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;BLOG_URL&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;my-github-account-name&amp;gt;.github.io&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;BLOG_URL&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; --configDir config --format yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;BLOG_URL&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p config/_default
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mv hugo.yaml config/_default
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Open the file &lt;code&gt;config/_default/hugo.yaml&lt;/code&gt; with your preferred editor. Change the &lt;code&gt;baseURL&lt;/code&gt; value from &lt;code&gt;https://example.org/&lt;/code&gt; to &lt;code&gt;http://localhost:1313/&lt;/code&gt; - &lt;em&gt;including&lt;/em&gt; that last slash.&lt;/p&gt;
+&lt;h2 id=&#34;module-init&#34;&gt;Set the site up as a module&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/hugo-modules/use-modules/#initialize-a-new-module&#34;&gt;Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rather than fiddling with nested git repos or submodules, I used Go&amp;rsquo;s module functionality. Hugo provides this functionality.&lt;/p&gt;
+&lt;p&gt;The mod init command was a little confusing for me. The idea is to create a unique Go module name. The suggested module name &lt;code&gt;example.com/my-blog&lt;/code&gt; is meant to be your actual site url as a &lt;em&gt;namespace&lt;/em&gt; with a subfolder as a &lt;em&gt;unique identifier&lt;/em&gt;. For example, I used &lt;code&gt;tanglisha.gihub.io/blog&lt;/code&gt; in my mod init. The subfolder can be whatever you want. If you aren&amp;rsquo;t using Go aside from this, you are unlikely to run into a name conflict. The value you use will go into your &lt;a href=&#34;https://github.com/tanglisha/tanglisha.github.io/blob/main/go.mod&#34;&gt;top level &lt;code&gt;go.mod&lt;/code&gt; file.&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I suggest &lt;em&gt;not&lt;/em&gt; leaving this as &lt;code&gt;example.com/my-blog&lt;/code&gt;, if you create a new Hugo site later and do the same thing you could get a module name conflict in Go that may be confusing.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo mod init &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;BLOG_URL&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/blog&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;theme&#34;&gt;Theme&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;I looked through the themes listed on the Hugo website to find a simple one.&lt;/a&gt; I ended up choosing &lt;a href=&#34;https://themes.gohugo.io/themes/hugo-theme-jane/&#34;&gt;Jane&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Because we&amp;rsquo;re using Go modules, the theme can be added in the config file at &lt;code&gt;config/_default/hugo.yaml&lt;/code&gt;. &lt;code&gt;module&lt;/code&gt; and &lt;code&gt;theme&lt;/code&gt; are top level keys, don&amp;rsquo;t indent them.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/hugo-modules/use-modules/#use-a-module-for-a-theme&#34;&gt;Docs&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;theme&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#ae81ff&#34;&gt;github.com/xianmin/hugo-theme-jane&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;module&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;imports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#f92672&#34;&gt;path&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github.com/xianmin/hugo-theme-jane&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we can download the theme back on the command line.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/hugo-modules/use-modules/#update-modules&#34;&gt;Docs&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo mod get
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vendor-modules&#34;&gt;Vendor modules&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/hugo-modules/use-modules/#vendor-your-modules&#34;&gt;Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I highly recommend vendoring your modules. This will download your dependencies into a &lt;code&gt;_vendor&lt;/code&gt; directory, which avoids issues later on.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You won&amp;rsquo;t need internet access in the future to build your site&lt;/li&gt;
+&lt;li&gt;If a dependency disappears for any reason, you can still build your site. &lt;a href=&#34;https://en.wikipedia.org/wiki/Npm_left-pad_incident&#34;&gt;A disappearing dependency is what caused the left-pad incident in 2016&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Completely sidesteps a &lt;a href=&#34;https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-03-Dependency-Chain-Abuse&#34;&gt;dependency confusion attack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Be sure to include the &lt;code&gt;_vendor&lt;/code&gt; directory in your repo.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo mod vendor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;add-to-github-pages&#34;&gt;Add to GitHub Pages&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Go to your GitHub account and create a new repo &lt;code&gt;&amp;lt;your-account-name&amp;gt;.github.io&lt;/code&gt; for GitHub Pages by clicking the plus (+). It must be named using this pattern to work.&lt;/p&gt;
+&lt;p&gt;Look at the menu along the top of the screen. Click &lt;code&gt;Settings&lt;/code&gt;. On the new page, click &lt;code&gt;Pages&lt;/code&gt; in the menu along the left of the screen.&lt;/p&gt;
+&lt;p&gt;Change the &lt;code&gt;Source&lt;/code&gt; dropdown to &lt;code&gt;GitHub Actions&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;Follow steps 5-6 to set up GitHub Actions.&lt;/a&gt; This will build and deploy your site to GitHub pages every time you push a change. I&amp;rsquo;m not pasting the yaml here because&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I didn&amp;rsquo;t write it / it&amp;rsquo;s not mine&lt;/li&gt;
+&lt;li&gt;If there are changes, that page will be kept up to date&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Go back to the main page of your repo. You can do this by clicking on the repo name at the top of the screen.&lt;/p&gt;
+&lt;p&gt;This page will give you instructions on adding this as a remote. It&amp;rsquo;ll look something like &lt;code&gt;git remote add origin https://github.com/&amp;lt;your-account-name&amp;gt;/&amp;lt;your-account-name&amp;gt;.github.io.git&lt;/code&gt;. Copy it from the website, then go back to he terminal/console you were working in before. Make sure you&amp;rsquo;re still located in the hugo site you&amp;rsquo;ve created.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now paste the command you copied from Github.&lt;/p&gt;
+&lt;p&gt;Add the new directories and files to git.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add _vendor .github archetypes assets config content datta i18n layouts public resources static themes .hugo_build.lock go.mod go.sum&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;set up website&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Before this will work in GitHub Pages, we need to add a new configuration file specific to production, where it will be published.&lt;/p&gt;
+&lt;p&gt;Make sure the baseURL used in this snipped begins with &lt;code&gt;https://&lt;/code&gt; and ends with a slash.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p config/production
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;baseURL: \&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;BLOG_URL&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/\&amp;#34;&amp;#34;&lt;/span&gt; &amp;gt; config/production/hugo.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add config/production/hugo.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Give GitHub a few minutes to build your site, then visit your blog url. You should see a site that&amp;rsquo;s styled, but doesn&amp;rsquo;t yet have any content.&lt;/p&gt;
+</description>
+      
+    </item>
     
   </channel>
 </rss>
