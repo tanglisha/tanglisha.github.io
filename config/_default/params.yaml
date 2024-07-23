@@ -9,7 +9,7 @@ author:
   # url: "/about"        # optional                      # 可选
 
 # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-logoTitle: "LD"        # default: the title value    # 默认值: 上面设置的title值
+logoTitle: "Liz Dahlstrom"        # default: the title value    # 默认值: 上面设置的title值
 keywords:
   - development
 
@@ -54,7 +54,7 @@ publicCDN:
   slideout: '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
 
 gitInfo:
-  gitRepo: "https://github.com/tanglisha/tanglisha.gitthub.io"
+  gitRepo: "https://github.com/tanglisha/tanglisha.github.io"
   showCommitMessage: false
 
 social:
